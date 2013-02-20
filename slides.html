@@ -1,0 +1,589 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>CSS3 transitions &amp; animations</title>
+    
+    <link href="css/impress-slides.css" rel="stylesheet" />
+    <link href="css/github.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+</head>
+
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+
+<div id="impress">
+  
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+            First slide
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div id="title" class="step slide" data-x="-1000" data-y="-2000" data-scale="1">
+        <h1>CSS</h1>
+        <p class="centered">Animations &amp; Transitions</p>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+            slide
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="-1000" data-y="-1000" >
+        <h1 class="std slidefromleft">We'll cover</h1>
+        <ul class="std">
+            <li class="slidefromright">Transitions</li>
+            <li class="slidefromright">Animations</li>
+            <li class="slidefromright">Hooking up animations to javascript and Angular</li>
+        </ul>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        power point
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div id="pptfree2" class="step slide" data-x="0" data-y="-1900" data-scale="1">
+        <ul><li>Slides Power point free</li>
+            <li>Hand made with CSS animations</li>
+            <li>and the impress.js library</li>
+        </ul>
+        <img style="position: float; margin-left: 150px;" src="img/nopowerpoint.png" />
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div id="transition" class="step slide" data-rotate="90" data-x="1000" data-y="-1650">
+        <h1 class="std">CSS Transitions</h1>
+        <ul>
+            <li  class="slidefromright">Two styles</li>
+            <li  class="slidefromright2">A Transition</li>
+            <li  class="slidefromright3">A trigger</li>
+        </ul>
+    </div>
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        W/O transitions
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="1000" data-y="-750" data-rotate="0">
+        <p>Without transitions: <span id="myText">HELLO</span></p>
+        <pre>
+            <code data-language="css">
+/*  style 1 */
+#myText {
+  background-color: red;
+}
+
+/* style 2 */
+#myText:hover {
+  background-color: blue;
+}</code>
+        </pre>
+
+        <pre>
+            <code data-language="html">
+<span id="myText">HELLO</span></code>
+        </pre>
+    </div>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+            With transitions
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="1000" data-y="300" data-scale="1" data-rotate="-90">
+        <p>With transitions: <span id="myAnimatedText">GOODBYE</span></p>
+        <pre>
+            <code data-language="css">
+/*  style 1 */
+#myAnimatedText {
+  background-color: red;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: 1.0s;
+}
+
+/*  style 2 */
+#myAnimatedText:hover {
+  background-color: blue;
+}</code>
+        </pre>
+<pre>
+<code data-language="html">
+<span id="myAnimatedText">GOODBYE</span></code>
+        </pre>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        what can you transition?
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step  slide" data-rotate="0" data-x="-1000" data-y="0">
+        <h2 class="std">What can you transition?</h2>
+        <ul><li class="slidefromleft">Text properties (color, font-size, etc...)</li>
+            <li class="slidefromright">Box properties (width, margin, padding, borders, etc...)</li>
+            <li class="slidefromleft">Transforms</li>
+            <li class="slidefromright">SVG</li>
+        </ul>
+        <p><a href="http://www.w3.org/TR/2013/WD-css3-transitions-20130212/#animatable-css" target="#">Check the spec.</a></p>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        browser support
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-rotate="0" data-x="0" data-y="0">
+        <h2 class="std">Browser support</h2>
+        <p>Still a working draft (2009)</p>
+        <table class="mytable">
+            <tr>
+                <th></td>
+                <th>Chrome</th>
+                <th>Safari</th>
+                <th>Firefox</th>
+                <th>Opera</th>
+                <th>IE</th>
+            </tr>
+            <tr>
+                <td class="mytableLeftCol">Version</td>
+                <td>1.0 (12/2008)</td>
+                <td>3.2 (11/2008)</td>
+                <td>4.0 (3/2011)</td>
+                <td>10.5</td>
+                <td>10 (11/2012)</td>
+            </tr>
+            <tr>
+                <td class="mytableLeftCol">Prefix</td>
+                <td>-webkit</td>
+                <td>-webkit</td>
+                <td>-moz</td>
+                <td>-o</td>
+                <td>none</td>
+            </tr>
+        </table>
+<pre>
+            <code data-language="css">
+/*  style 1 */
+#myAnimatedText {
+    -webkit-transition-duration: 1.0s;  /* Chrome, Safari   */
+    -moz-transition-duration: 1.0s;     /* Firefox          */
+    -o-transition-duration: 1.0s;       /* Opera            */
+    -transition-duration: 1.0s;         /* IE 10+           */
+}</code>
+    </pre>
+
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        transition-property
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step  slide" data-x="2000" data-y="-2000" data-rotate="-30">
+        <h2 class="std">transition-property</h1>
+        <ul>
+            <li>transition-property: prop1, prop2;</li>
+            <li>transition-property: all;</li>
+        </ul>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        delay duration
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step  slide" data-x="2000" data-y="-1000" data-rotate="-60">
+        <h2 class="std">transition-duration transition-delay</h1>
+        <ul>
+            <li>transition-duration: 0.5s;</li>
+            <li>transition-duration: 500ms;</li>
+        </ul>
+        <ul>
+            <li>transition-delay: 0.5s;</li>
+            <li>transition-delay: 500ms;</li>
+        </ul>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        timing function
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step  slide" data-x="2000" data-y="-0" data-rotate="-90">
+        <h2 class="std">transition-timing-function</h1>
+        <ul>
+            <li>ease-in-out; <div class="transition-timing-sample1" id="transition-timing-sample-easeinout"></div></li>
+            <li>ease-out;  <div class="transition-timing-sample2" id="transition-timing-sample-easeout"></div></li>
+            <li>ease-in;  <div class="transition-timing-sample3" id="transition-timing-sample-easein"></div></li>
+            <li>linear;  <div class="transition-timing-sample4" id="transition-timing-sample-linear"></div></li>
+            <li>cubic-bezier(...);  <div class="transition-timing-sample5" id="transition-timing-sample-custom"></div></li>
+        </ul>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        short hand notation
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="3000" data-y="-0" data-rotate="-120">
+        <h2 class="std">short-hand notation</h1>
+<pre><code data-language="css">.myClass {
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+.myClass 2 {
+    transition-property: color, margin-top;
+    transition-duration: 1s, 2.0s;
+}</code>
+</pre>
+            <h1 class="centered"><strong>===</strong></h1>
+<pre><code data-language="css">.myClass {
+    transition: all 1s ease-in-out .5s;
+}
+
+.myClass2 {
+    transition: color 1s,
+                margin-top 1s;
+}</code>
+</pre>
+    </div>
+   
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        limitations
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div id="transitionLimitations" class="step slide" data-x="3000" data-y="-1000" data-rotate="-150">
+        <h2 class="std">Limitations</h1>
+        <ul>
+            <li><span class="TransitionLimitationNo">No</span> repeat</li>
+            <li><span class="TransitionLimitationNo">No</span> reverse</li>
+            <li><span class="TransitionLimitationNo">No</span> pause</li>
+            <li><span class="TransitionLimitationNo">No</span> intermediary steps</li>
+            <li>Requires <span class="TransitionLimitationNo">explicit</span> trigger (CSS or javascript)</li>
+        </ul>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        CSS animations first page
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="3000" data-y="-2000" data-rotate="0">
+        <h1 class="std">CSS Animations</h1>
+        <p>Similar to transitions with more features.</p>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        auto start
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="3000" data-y="-3000" data-rotate="0" data-z="0" >
+        <h2 class="std">Example</h1>
+            <p>Animation automatically starts:</p>
+<pre class="bouncyDiv"><code data-language="css">.bouncyDiv  {
+    -webkit-animation: bounce-animation 2.0s;
+    -webkit-animation-delay: 0.5s;
+}
+
+@-webkit-keyframes bounce-animation {
+    from  { -webkit-transform: translateY(   0px);   }
+    10%   { -webkit-transform: translateY( 200px);   }
+    30%   { -webkit-transform: translateY(  66px);   }
+    50%   { -webkit-transform: translateY( 200px);   }
+    70%   { -webkit-transform: translateY( 160px);   }
+    to    { -webkit-transform: translateY( 200px);   } 
+}</code>
+</pre>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        css trigger
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="2000" data-y="-3000" data-rotate="0" data-z="0" >
+        <h2 class="std">CSS trigger animation</h2>
+<pre><code data-language="css">#shakeIt:hover {
+    -webkit-animation: shake-it-animation 0.1s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes shake-it-animation {
+    from  { -webkit-transform: rotate(  0deg);  }
+    25%   { -webkit-transform: rotate(-15deg);  }
+    50%   { -webkit-transform: rotate(  0deg);  }
+    75%   { -webkit-transform: rotate( 15deg);  }
+    to    { -webkit-transform: rotate(  0deg);  }
+}</code>
+</pre>
+        <img src="img/monkey.png" id="shakeIt"></img>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        what can you animate?
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="1000" data-y="-3000" data-rotate="0" data-z="0" >
+        <h2 class="std">What can you animate?</h2>
+        <ul><li class="slidefromleft">Text properties (color, font-size, etc...)</li>
+            <li class="slidefromright">Box properties (width, margin, padding, borders, etc...)</li>
+            <li class="slidefromleft">Transforms</li>
+            <li class="slidefromright">SVG</li>
+        </ul>
+        <p><a href="http://www.w3.org/TR/css3-animations/" target="#">Check the spec.</a></p>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        browser support
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-rotate="0" data-x="0" data-y="-3000">
+        <h2 class="std">Browser support</h2>
+        <p>Still a working draft (2009)</p>
+        <table class="mytable">
+            <tr>
+                <th></td>
+                <th>Chrome</th>
+                <th>Safari</th>
+                <th>Firefox</th>
+                <th>Opera</th>
+                <th>IE</th>
+            </tr>
+            <tr>
+                <td class="mytableLeftCol">Version</td>
+                <td>1.0 (12/2008)</td>
+                <td>3.2 (11/2008)</td>
+                <td>4.0 (3/2011)</td>
+                <td>10.5</td>
+                <td><strong>NO SUPPORT</strong></td>
+            </tr>
+            <tr>
+                <td class="mytableLeftCol">Prefix</td>
+                <td>-webkit</td>
+                <td>-webkit</td>
+                <td>-moz</td>
+                <td>-o</td>
+                <td>N/A</td>
+            </tr>
+        </table>
+<pre>
+<code data-language="css">#shakeIt:hover {
+    -webkit-animation: shake-it 0.1s;  /* Chrome, Safari   */
+    -moz-animation: shake-it 0.1s;     /* Firefox          */
+    -o-animation: shake-it 0.1s;       /* Opera            */
+    ...
+}
+</code>
+    </pre>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        animation properties
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-rotate="0" data-x="-1000" data-y="-3000">
+        <h2 class="std">Animation properties</h2>
+        <ul>
+            <li class="slidefromleft">animation-name</li>
+            <li class="slidefromright">animation-duration</li>
+            <li class="slidefromleft">animation-timing-function</li>
+            <li class="slidefromright">animation-iteration-count</li>
+            <li class="slidefromleft">animation-direction</li>
+            <li class="slidefromright">animation-delay</li>
+            <li class="slidefromleft">animation-fill-mode</li>
+        </ul>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        animation-fill-mode
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-rotate="0" data-x="-2000" data-y="-3000">
+        <h2 class="std">animation-fill-mode</h2>
+        <p>Use <em>forward</em> to prevent animation from rolling back.</p>
+<pre><code data-language="css">.fill-mode-none {
+    -webkit-animation: font-size-animation 3.0s ease-in-out;
+}
+.fill-mode-forwards {
+    -webkit-animation: font-size-animation 3.0s ease-in-out forwards;
+}
+@-webkit-keyframes font-size-animation {
+    from    { font-size: 20px; letter-spacing: 1.0; }
+    to      { font-size: 60px; letter-spacing: -25px;}
+}</code>
+</pre>
+        <div class="fill-mode-none">.fill-mode-none</div><div class="fill-mode-forwards">.fill-mode-forwards</div>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        animation-direction
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-rotate="0" data-x="-2000" data-y="-2000">
+        <h2 class="std">animation-direction</h2>
+        <h1 class="std centered"><div class="direction-alternate">C</div><div class="direction-normal">S</div><div class="direction-reverse">S</div><div class="direction-alternate-reverse">3</div></h1>
+        <div class="directiontypeContainer">
+            <span class="directiontype">Alternate</span><span class="directiontype">Normal</span><span class="directiontype">Reverse</span><span class="directiontype">Alternate-Reverse</span>
+        </div>
+<pre><code data-language="css">.direction-normal {
+    -webkit-animation: rotanim 1.0s infinite linear;
+}
+.direction-alternate {
+    -webkit-animation: rotanim 1.0s alternate linear infinite;
+}
+.direction-reverse {
+    -webkit-animation: rotanim1.0s reverse linear infinite;
+}
+.direction-alternate-reverse {
+    -webkit-animation: rotanim 1.0s alternate-reverse  linear infinite;
+}
+</code></pre>
+
+    </div>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        pausing
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-rotate="0" data-x="-2000" data-y="-1000">
+        <h2 class="std">pausing animations</h2>
+        <ul>
+            <li>animation-state: paused|running;</li>
+            <li>Triggered using pseudo-classes</li>
+        </ul>
+
+        <div id="pausableAnimatedDiv"></div>
+
+<pre><code data-language="css">#pausableAnimatedDiv {
+    width: 100px;
+    height: 70px;
+    background-color: yellow;
+    border: 2px solid black;
+    -webkit-animation: rotate-animation 3s linear infinite;
+}
+
+#pausableAnimatedDiv:hover {
+    -webkit-animation-play-state: paused;
+}
+</code></pre>
+
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        start animation in code
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-rotate="0" data-x="-2000" data-y="0">
+        <h2 class="std">starting an animation in code</h2>
+        <ul><li>Add a class to a DOM element in code that contains the animation...</li>
+            <li>Transitions and animations work the same</li>
+        </ul>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        jquery
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-rotate="0" data-x="-2000" data-y="1000">
+        <h2 class="std">The jQuery way</h2>
+        
+
+        <div id="blueDiv"></div>
+
+
+<form class="jquerySampleForm">
+    <label>$("#blueDiv").addClass("</label>
+    <input type="text" id="classNameToAddInput"></input>
+    <label>");</label>
+    <input type="button" id="applyClassButton" value="Run Code"></input>
+</form>
+
+<form class="jquerySampleForm">
+    <label>$("#blueDiv").removeClass("</label>
+    <input type="text" id="classNameToRemoveInput"></input>
+    <label>");</label>
+    <input type="button" id="removeClassButton" value="Run Code"></input>
+</form>
+
+<pre><code data-language="css">.movedup-div {
+    -webkit-animation: movedup-div-animation 1s forwards;
+}
+.rotated-div {
+    -webkit-animation: rotated-div-animation 1s forwards;
+}
+.movedright-div {
+    -webkit-animation: movedright-div-animation 1s forwards;
+}
+.colorized-div {
+    -webkit-animation: colorized-div-animation 1s forwards;
+}
+</code></pre>
+
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        angular
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="-1000" data-y="1000">
+        <h2 class="std">The Angular way</h2>
+        <ul>
+            <li>class binding (ng-class=property or class="{{property}}")</li>
+            <li>preferred but more complex way, Angular directives</li>
+        </ul>
+
+        <p>Demo app...</p>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        questions
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div id="questions" class="step slide" data-x="0" data-y="-1000" data-z="+2000">
+        <h1 class="std">QUESTIONS?</h1>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        overview
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div id="overview" class="step"  data-scale="8" data-x="500" data-y="-500">
+
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script src="js/rainbow-custom.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>impress().init();</script>
+
+<script>
+$().ready(function() {
+    $("#transition-timing-sample-easeinout").addClass("transition-timing-sample-end"); 
+    $("#transition-timing-sample-easeout").addClass("transition-timing-sample-end"); 
+    $("#transition-timing-sample-easein").addClass("transition-timing-sample-end"); 
+    $("#transition-timing-sample-linear").addClass("transition-timing-sample-end"); 
+    $("#transition-timing-sample-custom").addClass("transition-timing-sample-end"); 
+});
+</script>
+
+<script>
+$('#applyClassButton').click(function() {
+    $('#blueDiv').addClass($('#classNameToAddInput').val()); 
+});
+$('#removeClassButton').click(function() {
+    $('#blueDiv').removeClass($('#classNameToRemoveInput').val()); 
+});
+$('#classNameToAddInput').change(function() {
+    $('#classNameToRemoveInput').val($('#classNameToAddInput').val());
+});
+$('#classNameToAddInput').keyup(function() {
+    $('#classNameToRemoveInput').val($('#classNameToAddInput').val());
+});
+</script>
+
+<script>
+var api = impress();
+
+$(document).keyup(function(e){
+    if (e.keyCode == 38) { // up
+       api.goto('overview');
+       return true;
+    }
+});
+</script>
+
+</body>
+</html>
+
