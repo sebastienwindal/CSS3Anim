@@ -17,27 +17,31 @@
 
 <div class="row-fluid my-hero-unit">
 	<header>
-		<h1><img src="img/dingo.jpg" width="192" /> Fandingo</h1>
+		<h1><img src="img/dingo.jpg" width="192" class="dingo"/> <span class="titleAnimationLetter">F</span><span class="titleAnimationLetter">a<span class="titleAnimationLetter">n<span class="titleAnimationLetter">D<span class="titleAnimationLetter">i<span class="titleAnimationLetter">n<span class="titleAnimationLetter">g<span class="titleAnimationLetter">o</span></h1>
 	</header>
 </div>
 
 <div class="row-fluid main-content" ng-controller="appCtrl">
 	<ul id="thumbList" class="span9" >
 
-		<li class="thumb"
+		<li class="thumb thumbInitialAnimation"
 			ng-repeat="movie in movies"
 			ng-controller="movieCtrl" 
-			ng-click="selectMovie()">
+			ng-click="selectMovie()"
+			>
 			<img src="{{movie.image}}"  />
 			<div class="movieDescr"><p>{{movie.name}}</p></div>
 		</li>
 	</ul>
+
+
 
 	<div class="span3" id="movieDetails" > 
 
 		<p>{{selectedMovie.description}}</p>
 
 	</div>
+
 
 </div>
 

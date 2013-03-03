@@ -15,27 +15,14 @@
 
 <body ng-app="fandingoApp">
 
-<div class="row-fluid my-hero-unit">
-	<header>
-		<h1><img src="img/dingo.jpg" width="192" /> Fandingo</h1>
-	</header>
-</div>
 
-<div class="row-fluid main-content" ng-controller="appCtrl">
-	<ul id="thumbList" class="span9" >
+<div class="row-fluid main-content" >
+	<div class="span3 offset3" style="margin: 200px; color:white; width: 200px;">
 
-		<li class="thumb"
-			ng-repeat="movie in movies"
-			ng-controller="movieCtrl" 
-			ng-click="selectMovie()">
-			<img src="{{movie.image}}"  />
-			<div class="movieDescr"><p>{{movie.name}}</p></div>
-		</li>
-	</ul>
-
-	<div class="span3" id="movieDetails" > 
-
-		<p>{{selectedMovie.description}}</p>
+		<form>
+			<textarea  ng-model="sometext"></textarea>
+			<flipping-text text="sometext"></flipping-text>
+		</form>
 
 	</div>
 
