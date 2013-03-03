@@ -520,20 +520,52 @@
         angular
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <div class="step slide" data-x="-1000" data-y="1000">
-        <h2 class="std">The Angular way</h2>
+        <h2 class="std">Angular philosophy</h2>
         <ul>
-            <li>Style binding (ng-style)</li>
-            <li>Class binding (ng-class)</li>
-            <li>Advanced way, direct DOM manipulation with Angular directives</li>
+            <li class="slidefromleft">Use data binding</li>
+            <li class="slidefromleft2">No DOM manipulation</li>
         </ul>
+        <p>unless you have to<p>
+        <ul>
+            <li class="slidefromright3"><strong>NOT IN in the CONTROLLERS</strong></li>
+            <li class="slidefromright4">use directives instead</li>
+        </ul>
+    </div>
 
-        <p>Demo app...</p>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        angular binding
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="0" data-y="1000">
+        <h2 class="std">style binding</h2>
+        <ul>
+            <li>ng-style</li>
+            <li>ng-class</li>
+        </ul>
+        <p>Many ways to bind:</p>
+<pre><code data-language="html"><div ng-class="{true:'myclass', false:''}[property]">...</div>
+
+<div ng-class="{'className': boolProperty}">...</div>
+
+<div ng-switch on="property">
+    <div ng-switch-when="value1"><p class="myclass">blabla...</p></div>
+    <span ng-switch-when='value2'><img src="bla2"/></span>
+    <span ng-switch-default><p class="err">?!?!</p></span>
+</div>
+</code></pre>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        angular directives
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <div class="step slide" data-x="1000" data-y="1500">
+        <h2 class="std">Angular directives</h2>
+        <p>Use directives to programmatically change the style nad more.</p>
     </div>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
         questions
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <div id="questions" class="step slide" data-x="0" data-y="-1000" data-z="+2000">
+    <div id="questions" class="step slide" data-x="0" data-y="-1000" data-z="+2000" data-rotate="180">
         <h1 class="std">QUESTIONS?</h1>
     </div>
 

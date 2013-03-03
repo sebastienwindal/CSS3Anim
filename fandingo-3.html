@@ -28,8 +28,9 @@
 			ng-repeat="movie in movies"
 			ng-controller="movieCtrl" 
 			ng-click="selectMovie()"
-			ng-class="{true:'animatedhighlightImage', false:''}[isSelected]"
-			movieselected>
+			
+			ng-class="{'animatedhighlightImage': isSelected}"
+			>
 			<img src="{{movie.image}}"  />
 			<div class="movieDescr"><p>{{movie.name}}</p></div>
 		</li>

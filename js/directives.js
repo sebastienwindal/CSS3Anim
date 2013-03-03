@@ -31,10 +31,15 @@ app.directive('flippingText', function() {
             scope.$watch("text", function(newVal, oldVal, scope) {
 
                 p.addClass("flipping");
+
                 setTimeout(function() {
                     scope.t = newVal;
-                    scope.$apply(); 
+                    scope.$apply();
                     
+                    //var h = newVal.replace(/[aeiouyAEIOUY]/g, function(g) {
+                    //    return "<span style='color:lime'>" + g + "</span>";
+                    //});
+                    //p.html(h);
                 }, 200);
                 setTimeout(function() {
                     p.removeClass("flipping");
