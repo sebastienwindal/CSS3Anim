@@ -22,14 +22,13 @@
 </div>
 
 <div class="row-fluid main-content" ng-controller="appCtrl">
-	<ul id="thumbList" class="span9" >
 
+	<ul id="thumbList" class="span9" >
 		<li class="thumb thumbInitialAnimation"
 			ng-repeat="movie in movies"
 			ng-controller="movieCtrl" 
 			ng-click="selectMovie()"
-			ng-class="{true:'animatedhighlightImage', false:''}[isSelected]"
-			movieselected>
+			ng-class="{true:'animatedhighlightImage', false:''}[isSelected]">
 			<img src="{{movie.image}}"  />
 			<div class="movieDescr"><p>{{movie.name}}</p></div>
 		</li>

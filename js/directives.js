@@ -1,5 +1,4 @@
-
-app.directive('movieselected', function() {
+app.directive('movieSelected', function() {
     return {
         restrict: 'A',
         link:function (scope, element, attrs) {
@@ -7,16 +6,46 @@ app.directive('movieselected', function() {
             thumb.bind('click', animateThumb);
 
             function animateThumb() {
+                // get the CSS classes of our HTML element
                 var classes = thumb.attr("class").split(" ");
-                if (_.contains(classes, "highlightImage2")) {
-                    thumb.removeClass("highlightImage2");
+                if (_.contains(classes, "animatedhighlightImage")) {
+                    // this element is already selected, unselect it.
+                    thumb.removeClass("animatedhighlightImage");
                 } else {
-                    thumb.addClass("highlightImage2");    
+                    // the element was not selected before.
+                    // "unselect" previously selected movie.
+                    thumb.parent().children().removeClass("animatedhighlightImage");
+                    // select the new one.
+                    thumb.addClass("animatedhighlightImage");    
                 }
             }
         }
     };
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.directive('flippingText', function() {

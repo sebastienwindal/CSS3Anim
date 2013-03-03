@@ -1,12 +1,15 @@
 CSS3Anim
 ========
 
-A CSS3 animation presentation
+A CSS3 animation presentation. Transitions, animations and how to use it from Angular.js.
 
-slides.html - the impress.js slides
+Start with slides.html - the impress.js slides and then get to the demo app:
 
-fandingo-0.html - angular app w/o any animation
-fandingo-1.html - Same app with added CSS animations (on change is CSS)
-fandingo-2.html - Animating the movie selection from angular using ng-class directive
-fandingo-3.html - Sample "flipping text" directive that makes text change automatically animated
-form-4.html - making the point of flipping-text directive reusability point.
+* fandingo-0.html - The angular app w/o any animation.
+* fandingo-1.html - Same app with added CSS animations (on change is CSS)
+* fandingo-2.html - Animating the movie selection from angular using ng-class directive
+* fandingo-3.html - Animating the movie selection from angular using a custom movie-selected directive
+* fandingo-4.html - More advanced directive, a "flipping text" directive that watches for text changes and
+				 animates transitions from old text to new text.
+				 Also uncomment code in directive to see a _vowel colorization_ sample of firective DOM manipulation.
+* form-4.html - making the point of flipping-text directive reusability point.
