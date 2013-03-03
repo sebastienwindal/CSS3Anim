@@ -1,0 +1,232 @@
+
+
+h1 { 
+	font-size: 6em;
+	color: #888800;
+	line-height: 150%;
+	font-weight: bold;
+}
+
+html {
+	padding-top: 0px;
+	background-color: black;
+}
+
+body {
+	margin: 0 auto;	
+	background-color: #fff;	
+	font-family: 'Avenir Next Condensed';
+	font-size: 18pt;
+}
+
+header {
+	padding: 0px;
+	margin: 0 auto;
+	width: 80%;
+	background-color: white;
+}
+
+.main-content {
+	background-color: #222;
+}
+
+.my-hero-unit {
+	border-bottom: 1px solid #000;
+}
+
+#movieDetails {
+	height: 200px;
+	padding: 40px 20px 30px 0px;
+	color: #eee;
+}
+
+#thumbList {
+	list-style-type: none;
+	padding: 30px;
+}
+
+#thumbList li {	
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: top;
+}
+
+.single-movie-description {
+	list-style-type: none;
+}
+
+.selectedMovie img {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+}
+.thumb {
+	margin:0px 2px 2px 2px;
+	padding: 5px;
+	width: 120px;
+	height: 200px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0d1711), color-stop(13%,#031724), color-stop(100%,#000308));
+	border: 1px solid rgba(80,120,0,0.2);
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+	color: #eee;
+	font-size: 12pt;
+	font-weight: normal;
+	overflow: hidden;
+}
+
+.thumb img {
+	width:94px;
+	height: 141px;
+	margin: 5px 13px;
+}
+
+.thumbInitialAnimation img {
+	-webkit-animation-name: crazyskew-Animation;
+	-webkit-animation-duration: .5s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+
+.flipping {
+	-webkit-animation: flipAnimation 0.4s ease-in;
+}
+
+@-webkit-keyframes flipAnimation {
+	0% { -webkit-transform: rotateY(0deg); opacity: 1.0; }
+	50% { -webkit-transform: rotateY(180deg); opacity: 0.2; }
+	100% { -webkit-transform: rotateY(360deg); opacity: 1.0; }
+}
+
+.highlightImage img {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.animatedhighlightImage img {
+	-webkit-animation-name: highlightImageanimation;
+	-webkit-animation-duration: 0.3s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes highlightImageanimation {
+	from {
+		width: 94px;
+		height: : 141px;
+		margin: 5px 13px;
+		border: 0px;
+	}
+	to {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		border: 2px solid blue;
+	}
+}
+
+.movieDescr {
+	height: 30px;
+	margin: 0px;
+	padding: 1px;
+}
+
+.movieDescr p {
+	margin: 5px 13px;
+	padding: 1px;
+}
+
+.thumb:hover {
+	-webkit-animation-name: wobbleAnimation, color-Animation;
+	-webkit-animation-duration: .5s, 0.2s;
+	//-webkit-animation-timing-function: linear, linear;
+	-webkit-animation-iteration-count: infinite, 1;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#23474f), color-stop(13%,#184651), color-stop(100%,#032335));
+	border: 1px solid rgba(80,120,0,0.5);
+	box-shadow: 3px 3px 7px rgba(0,0,0,0.7);
+
+}
+
+@-webkit-keyframes wobbleAnimation {
+	from {
+		-webkit-transform: rotate(0deg) scale(1.0);	
+	}
+	25% {
+		-webkit-transform: rotate(-0.5deg) scale(0.995);	
+	}
+	75% {
+		-webkit-transform: rotate(+0.5deg) scale(1.005);		
+	}
+	to {
+		-webkit-transform: rotate(+0deg) scale(1.0);
+	}
+}
+
+@-webkit-keyframes color-Animation {
+	from {
+		background-color: #111111;
+		border: 1px solid rgba(80,120,0,0.2);
+		box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0d1711), color-stop(13%,#031724), color-stop(100%,#000308));
+	}
+	to {
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#23474f), color-stop(13%,#184651), color-stop(100%,#032335));
+		border: 1px solid rgba(80,120,0,0.5);
+		box-shadow: 3px 3px 7px rgba(0,0,0,0.7);
+	}
+}
+
+@-webkit-keyframes crazyskew-Animation {
+	from {
+		-webkit-transform: translate(0px,-160px);
+	}
+	
+	to {
+		-webkit-transform: translate(0px,0px);
+	}
+}
+
+
+
+
+.titleAnimationLetter {
+	display: inline-block;
+	margin:0px;
+	madding:0px;
+	-webkit-animation-name: titleletteranimation;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes titleletteranimation {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(-500px,0px) scale(0.1) rotate(-90deg) skew(-30deg,-30deg);
+		webkit-animation-timing-function: linear;
+	}	
+	70% {
+		opacity: 1;
+		-webkit-transform: translate(2px,0px) scale(1.02) rotate(1deg) skew(0,0);
+		webkit-animation-timing-function: ease-out;
+	}
+	to {
+		opacity: 1;
+		webkit-animation-timing-function: ease-out
+		-webkit-transform: translate(0px,0px) scale(1) rotate(0deg) skew(0,0);
+	}
+}
+
+
+.dingo {
+	-webkit-animation-name: dingoAnimation;
+	-webkit-animation-duration: 0.3s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes dingoAnimation {
+	from {
+		-webkit-transform: scale(1.0,0.1);
+	}
+	to {
+		-webkit-transform: scale(1.0,1.0);
+	}
+}
