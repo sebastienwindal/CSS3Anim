@@ -1,7 +1,7 @@
 var app = angular.module('fandingoApp', []); // have a matching <body ng:app="movieApp"> in your html!
 
 
-app.factory('fandingoService', function() {
+app.factory('fandingoModel', function() {
 	return {
 		movies: function() {
 				return [	{	name:"A good day to Die Hard",
@@ -44,13 +44,13 @@ app.factory('fandingoService', function() {
 });
 
 
-function appCtrl($scope, fandingoService) {
-	$scope.fandingoService = fandingoService; // save the service to be able to watch it.
-	$scope.movies = fandingoService.movies();
+function appCtrl($scope, fandingoModel) {
+	$scope.fandingoModel = fandingoModel; // save the service to be able to watch it.
+	$scope.movies = fandingoModel.movies();
 	$scope.selectedMovie = null;
 
-	$scope.$watch('fandingoService.currentMovie', function (newVal, oldVal) {
-		$scope.selectedMovie = fandingoService.currentMovie;
+	$scope.$watch('fandingoModel.currentMovie', function (newVal, oldVal) {
+		$scope.selectedMovie = fandingoModel.currentMovie;
 	});
 
 	$scope.unselectAllMovies = function() {
@@ -68,9 +68,9 @@ function appCtrl($scope, fandingoService) {
 }
 
 
-function movieCtrl($scope, fandingoService) {
+function movieCtrl($scope, fandingoModel) {
 
-	$scope.fandingoService = fandingoService;
+	$scope.fandingoModel = fandingoModel;
 	$scope.isSelected = false;
 
 	$scope.$watch('movie.isSelected', function() {
