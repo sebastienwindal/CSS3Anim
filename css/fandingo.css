@@ -61,7 +61,13 @@ header {
 		margin: 0;
 }
 
-.thumb {
+.staticthumb:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#23474f), color-stop(13%,#184651), color-stop(100%,#032335));
+	border: 1px solid rgba(80,120,0,0.5);
+	box-shadow: 3px 3px 7px rgba(0,0,0,0.7);
+}
+
+.staticthumb {
 	margin:0px 2px 2px 2px;
 	padding: 5px;
 	width: 120px;
@@ -75,7 +81,7 @@ header {
 	overflow: hidden;
 }
 
-.thumb img {
+.staticthumb img {
 	width:94px;
 	height: 141px;
 	margin: 5px 13px;
@@ -89,13 +95,16 @@ header {
 
 
 .flipping {
-	-webkit-animation: flipAnimation 0.4s ease-in;
+	-webkit-animation: flipAnimation 1.0s ease-in;
 }
 
 @-webkit-keyframes flipAnimation {
 	0% { -webkit-transform: rotateY(0deg); opacity: 1.0; }
-	50% { -webkit-transform: rotateY(180deg); opacity: 0.2; }
-	100% { -webkit-transform: rotateY(360deg); opacity: 1.0; }
+	49.5% { -webkit-transform: rotateY(90deg); opacity: 0.4; }
+	50% { -webkit-transform: rotateY(90deg); opacity: 0.0; }
+	50.1% { -webkit-transform: rotateY(-90deg); opacity: 0.0; }
+	50.2% { -webkit-transform: rotateY(-90deg); opacity: 0.4; }
+	100% { -webkit-transform: rotateY(0deg); opacity: 1.0; }
 }
 
 .highlightImage img {
@@ -134,15 +143,13 @@ header {
 	padding: 1px;
 }
 
+
+
 .thumb:hover {
 	-webkit-animation-name: wobbleAnimation, color-Animation;
 	-webkit-animation-duration: .5s, 0.2s;
 	//-webkit-animation-timing-function: linear, linear;
 	-webkit-animation-iteration-count: infinite, 1;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#23474f), color-stop(13%,#184651), color-stop(100%,#032335));
-	border: 1px solid rgba(80,120,0,0.5);
-	box-shadow: 3px 3px 7px rgba(0,0,0,0.7);
-
 }
 
 @-webkit-keyframes wobbleAnimation {

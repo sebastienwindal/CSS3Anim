@@ -69,10 +69,10 @@ app.directive('flippingText', function() {
                     //    return "<span style='color:lime'>" + g + "</span>";
                     //});
                     //p.html(h);
-                }, 200);
+                }, 500);
                 setTimeout(function() {
                     p.removeClass("flipping");
-                }, 400);
+                }, 1000);
                
             });
     }
